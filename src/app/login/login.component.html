@@ -1,0 +1,35 @@
+ 
+ 
+ <div class="container">
+
+        <div class="left_side">
+            <img class="left_img" src="../../assets/imags/photo login.png " alt=" ">
+            <h2 class="left_h2">Admin App</h2>
+        </div>
+
+        <div class="right_side">
+            <img class="right_img" src="../../assets/imags/loginside.png " alt=" ">
+            
+            <form >
+                <!-- <h2>Register Form</h2> -->
+              <h2 class="right_h2">Login</h2>
+                <div class="input_box">
+                  <i class="fa fa-envelope icon"></i>
+                  <input class="input-field" type="text" placeholder="Email" name="email" required [formNoValidate]=""  [(ngModel)]="loginObj.email">
+                </div>
+              
+                <div class="input_box">
+                  <i class="fi fi-rr-lock"></i>
+                  <input class="input-field" type="password" placeholder="Password" name="psw" required [formNoValidate]="" [(ngModel)]="loginObj.password">
+                </div>
+
+                <div class="forget_password">
+                    <div class="forget_box">
+                        <a href="" routerLink="/forgetPassword">Forget Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="login_button" (click)="login()" >Login</button>
+              </form>
+            
+        </div>
+    </div>

@@ -1,0 +1,94 @@
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+<app-decoration></app-decoration>
+
+<div class="main-content">
+    <header>
+        <h1>
+            Market
+        </h1>
+    </header>
+
+    <main>
+
+        <div>
+            <div class="managment">
+                <input class="search" type="text" placeholder="Search...." name="search" [(ngModel)]="searchtext">
+            </div>
+            <h2>Market product</h2>
+            <table class="products">
+                <thead>
+                    <tr>
+                        <th>ID <i class="fi fi-rr-usd-circle"></i></th>
+                        <th>User Name <i class="fi fi-rr-usd-circle"></i></th>
+                        <th> Name <i class="fi fi-rr-arrow-down"></i></th>
+                        <th>Price <i class="fi fi-rr-usd-circle"></i></th>
+                        <th>Quentity <i class="fi fi-rr-usd-circle"></i></th>
+                        <th>Total Price <i class="fi fi-rr-usd-circle"></i></th>
+                        <th>Delete<i class="fi fi-rr-badge-percent"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cart of cartArray | filter:searchtext ">
+                        <td>{{cart.id}}</td>
+                        <td>{{cart.customerName}}</td>
+                        <td><img [src]="cart.productImage" class="img-product"> {{cart.productName}}</td>
+                        <td>{{cart.productPrice}}</td>
+                        <td>{{cart.quntity}}</td>
+                        <td>{{cart.totalPrice}}</td>
+                        <td>
+                            <i class="fi fi-rr-edit" (click)="getCart($event,cart.id)" ></i>
+                            <i class="fi fi-rr-trash" (click)="DeleteCart($event,cart.id)" ></i>
+                       
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="add_update">
+            <form class="add_catr">
+            <!-- <h2>Register Form</h2> -->
+          <h2 class="right_h2">Add TO Cart</h2>
+            <div class="input_box">
+              <input class="input-field" type="number" placeholder="id" name="ID" required [(ngModel)]="cartObj.id">
+            </div>
+            <div class="input_box">
+              <input class="input-field" type="number" placeholder="Quntity" name="quntity" required [(ngModel)]="cartObj.quntity" >
+            </div>
+
+            <div class="input_box">
+
+                <input class="input-field" type="number" placeholder="product_Id" name="product_Id" required [(ngModel)]="cartObj.product_Id">
+              </div>
+            <button type="submit" class="add_button" (click)="addCart()" >Add</button>
+          </form> 
+
+          <form class="update_cart" >
+            <h2 class="right_h2">Update Cart</h2>
+            <div class="input_box">
+              <input class="input-field" type="number"  name="ID" required [(ngModel)]="cart_update.id">
+            </div>
+            <div class="input_box">
+              <input class="input-field" type="number"  name="quntity" required [(ngModel)]="cart_update.quntity">
+            </div>
+
+            <div class="input_box">
+
+                <input class="input-field" type="number"  name="product_Id" required [(ngModel)]="cart_update.product_Id">
+              </div>
+            <button type="submit" class="add_button" (click)="UpdateCart()" >Add</button>
+          </form>
+        </div>
+       
+
+    </main>
+
+</div>

@@ -1,0 +1,86 @@
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+<app-decoration></app-decoration>
+
+<div class="main-content">
+    <header>
+        <h1>
+            Market
+        </h1>
+    </header>
+
+    <main>
+
+        <div>
+            <div class="managment">
+                <input class="search" type="text" placeholder="Search...." name="search" [(ngModel)]="searchtext">
+            </div>
+            <h2>Market product</h2>
+            <table class="products">
+                <thead>
+                    <tr>
+                        <th>ID <i class="fi fi-rr-usd-circle"></i></th>
+                        <th> Name <i class="fi fi-rr-arrow-down"></i></th>
+                        <th>Description <i class="fi fi-rr-usd-circle"></i></th>
+                        <th>Delete<i class="fi fi-rr-badge-percent"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let category of categoryArray | filter:searchtext ">
+                        <td>{{category.id}}</td>
+                        <td> {{category.name}}</td>
+                        <td> {{category.description}}</td>
+                        <td><i class="fi fi-rr-edit" (click)="getCategory($event,category.id)"></i>
+                          
+                          <i class="fi fi-rr-trash"></i>
+                            <!-- <button type="submit" ><i class="fi fi-br-plus"></i></button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="add_update">
+            <form class="add_catr">
+            <!-- <h2>Register Form</h2> -->
+          <h2 class="right_h2">Add TO Category</h2>
+            <div class="input_box">
+              <input class="input-field" type="number" placeholder="id" name="ID" required [(ngModel)]="categoryObj.id">
+            </div>
+            <div class="input_box">
+              <input class="input-field" type="text" placeholder="Quntity" name="quntity" required [(ngModel)]="categoryObj.quntity" >
+            </div>
+
+            <div class="input_box">
+
+                <input class="input-field" type="text" placeholder="product_Id" name="product_Id" required [(ngModel)]="categoryObj.product_Id">
+              </div>
+            <button type="submit" class="add_button" (click)="addCategory()" >Add</button>
+          </form> 
+
+          <form class="update_cart" >
+            <h2 class="right_h2">Update Category</h2>
+            <div class="input_box">
+              <input class="input-field" type="number"  name="ID" required [(ngModel)]="category_update.id">
+            </div>
+            <div class="input_box">
+              <input class="input-field" type="text"  name="name" required [(ngModel)]="category_update.name">
+            </div>
+
+            <div class="input_box">
+
+                <input class="input-field" type="text"  name="description" required [(ngModel)]="category_update.description">
+              </div>
+            <button type="submit" class="add_button" (click)="UpdateCategory()" >Add</button>
+          </form>
+        </div>
+
+    </main>
+
+</div>

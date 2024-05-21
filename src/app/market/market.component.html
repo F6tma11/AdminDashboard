@@ -1,0 +1,162 @@
+
+
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+    <app-decoration></app-decoration>
+
+    <div class="main-content">
+        <header>
+            <h1>
+                Market
+            </h1>
+        </header>
+
+        <main>
+
+            <div>
+                <div class="managment">
+                    <input class="search" type="text"  placeholder="Search...." name="search" [(ngModel)]="searchtext">
+                    <div class="select">
+                        
+                        <button>Add element <i class="fi fi-br-plus"></i></button>
+                        <button class="active">Add Order <i class="fi fi-br-plus"></i></button>
+                    </div>
+                </div>
+                <div class="filter-product" >
+                    <ul>
+                        <li  routerLink="/market" (click)="getAllProducts()">All </li>
+                        <li  routerLink="/market" *ngFor="let Categor of categorysArray" (click)="getAllProductsByCategory(Categor.name)">{{Categor.name}} </li>
+                    </ul>
+                    </div>
+            </div>
+            <h2>Market product</h2>
+            <table class="products">
+                <thead>
+                   <tr>
+                    <th> Name <i class="fi fi-rr-arrow-down"></i></th>
+                    <th>Price <i class="fi fi-rr-usd-circle"></i></th>
+                    <th>Orders<i class="fi fi-rr-badge-percent"></i></th>
+                </tr> 
+                </thead>
+                <tbody>
+                     <tr *ngFor="let product of productsArray | filter:searchtext ">
+                    <td><img [src]="product.image" class="img-product"> {{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td><i class="fi fi-rr-edit" routerLink="/product/{{product.id}}/update"></i>
+                        <i class="fi fi-rr-trash"></i>
+                        <!-- <button type="submit" ><i class="fi fi-br-plus"></i></button> -->
+                    </td> 
+                </tr>
+            </table>
+            <h2>Saler Requests</h2>
+            <table class="salers">
+                <thead>
+                   <tr>
+                    <th> User <i class="fi fi-rr-arrow-down"></i></th>
+                    <th> Name <i class="fi fi-rr-arrow-down"></i></th>
+                    <th>Price <i class="fi fi-rr-usd-circle"></i></th>
+                    <th>Add Date<i class="fi fi-rr-alarm-clock"></i></th>
+                    <th>Orders<i class="fi fi-rr-badge-percent"></i></th>
+                </tr> 
+                </thead>
+                <tbody>
+                     <tr>
+                    <td>Ahmed Ali</td>
+                    <td><img src="../../assets/imags/orp.png" class="img-product"> orp</td>
+                    <td>250.99$</td>
+                    <td>28/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Khaled Mohamed</td>
+                    <td><img src="../../assets/imags/potted plant (1).png" class="img-product"> trowel</td>
+                    <td>150.99$</td>
+                    <td>28/2/2024</td>
+                <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td> Ali Yasser</td>
+                    <td><img src="../../assets/imags/mattock.png" class="img-product"> mattock</td>
+                    <td>500.99$</td>
+                    <td>24/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Mohamed Ahmed</td>
+                    <td><img src="../../assets/imags/potted plant (2).png" class="img-product"> shovel</td>
+                    <td>170.99$</td>
+                    <td>24/4/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Radwa Ali</td>
+                    <td><img src="../../assets/imags/sweed caporon.png" class="img-product">sweed caporon</td>
+                    <td>180.99$</td>
+                    <td>24/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Moataz Ali</td>
+                    <td><img src="../../assets/imags/potted plant (3).png" class="img-product">Living Organic</td>
+                    <td>250.99$</td>
+                    <td>28/2/2024</td>
+                    <td>><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Ahmed Mahmoud</td>
+                    <td><img src="../../assets/imags/potted plant (5).png" class="img-product"> orp</td>
+                    <td>250.99$</td>
+                    <td>28/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Amr Ali</td>
+                    <td><img src="../../assets/imags/trowel.png" class="img-product"> trowel</td>
+                    <td>150.99$</td>
+                    <td>28/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Eman Ali</td>
+                    <td><img src="../../assets/imags/potted plant (6).png" class="img-product"> mattock</td>
+                    <td>500.99$</td>
+                    <td>24/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Ameer Ali</td>
+                    <td><img src="../../assets/imags/shovel.png" class="img-product"> shovel</td>
+                    <td>170.99$</td>
+                    <td>24/4/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Heba Ali</td>
+                    <td><img src="../../assets/imags/potted plant (6).png" class="img-product">sweed caporon</td>
+                    <td>180.99$</td>
+                    <td>24/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Ahmed Ali</td>
+                    <td><img src="../../assets/imags/firtalizer.png" class="img-product">Living Organic</td>
+                    <td>250.99$</td>
+                    <td>28/2/2024</td>
+                    <td><i class="fi fi-rr-trash"></i><button type="submit">Add to Matket<i class="fi fi-br-plus"></i></button></td>
+                </tr>
+                </tbody>
+               
+            </table>
+            
+        </main>
+
+    </div>
+
+
+  

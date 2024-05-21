@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+</head>
+
+<body>
+
+    <app-decoration></app-decoration>
+
+    <div class="main-content">
+        <header>
+            <h1>
+                Accounts
+            </h1>
+
+
+
+        </header>
+
+        <main>
+         
+
+
+        
+        <h2>Saler Requests</h2>
+        <table class="salers">
+            <thead>
+               <tr>
+                <th> ID <i class="fi fi-sr-user"></i></th>
+                <th> Username <i class="fi fi-sr-user"></i></th>
+                <th> mail <i class="fi fi-rr-envelope"></i></th>
+                <th>Phone Number <i class="fi fi-rr-phone-flip"></i></th>
+                <th>Status<i class="fi fi-rs-person-dolly"></i></th>
+                <th>Manage<i class="fi fi-rs-person-dolly"></i></th>
+            </tr> 
+            </thead>
+            <tbody>
+                 <tr  *ngFor="let seller of sellerRequest">
+                <td>{{seller.id}}</td>
+                <td>{{seller.userName}}</td>
+                <td>{{seller.email}}</td>
+                <td>{{seller.phoneNumber}}</td>
+                <td>{{seller.status}}</td>
+                <td>
+                   
+                    <i class="fi fi-rr-trash" (click)="DeleteSeller($event,seller.id)"></i>
+                    <button type="submit" (click)="acceptSeller($event,seller.id)" >Add as Saler<i class="fi fi-br-plus"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </main>
+
+    </div>
+</body>
+
+</html>

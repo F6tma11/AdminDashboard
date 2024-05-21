@@ -1,0 +1,60 @@
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+<app-decoration></app-decoration>
+
+<div class="main-content">
+    <header>
+        <h1>
+            Update product
+        </h1>
+    </header>
+
+    <main>
+        <div class="add_update">
+
+            <div class="login-box">
+                <h3>Update prduct</h3>
+                <form  (ngSubmit)="UpdateProduct()">
+                  <div class="input_box">
+                    <input type="number" class="input-field"  name="Id" placeholder="Id" required="" [(ngModel)]="productUpdate.id">
+                 
+                  </div>
+                  <div class="input_box">
+                    <input type="text" class="input-field"  name="Name"placeholder="Name" required="" [(ngModel)]="productUpdate.name">
+                    
+                  </div>
+                  <div class="input_box">
+                    <input type="text" class="input-field"  name="description" placeholder="Description" required="" [(ngModel)]="productUpdate.description">
+                    
+                  </div>
+                  <div class="input_box">
+                    <input type="text" class="input-field"  name="quantity" placeholder="Quentity" required="" [(ngModel)]="productUpdate.quantity">
+                  
+                  </div>
+                  <div class="input_box">
+                    <input type="number" class="input-field"  name="price" placeholder="Price" required="" [(ngModel)]="productUpdate.price">
+                   
+                  </div>
+                  <div class="input_box">
+                    <input type="text" class="input-field"  name="image" placeholder="Image" required="" [(ngModel)]="productUpdate.image">
+                   
+                  </div>
+                  <div class="input_box">
+                    <input type="number" class="input-field"  name="categoryId" placeholder="CategoryId" required="" [(ngModel)]="productUpdate.categoryId">
+                  </div>
+                  <button type="submit" class="add_button" (click)="UpdateProduct()" >Add</button>
+
+                </form>
+              </div>
+        </div>
+       
+
+    </main>
+
+</div>

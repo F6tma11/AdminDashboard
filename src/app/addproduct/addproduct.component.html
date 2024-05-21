@@ -1,0 +1,52 @@
+
+
+
+<link rel='stylesheet'
+href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<link rel='stylesheet'
+href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+<app-decoration></app-decoration>
+
+<div class="main-content">
+<header>
+    <h1>
+        Market
+    </h1>
+</header>
+
+<main>
+
+    <div>
+        <div class="managment">
+            <!-- <input class="search" type="text"  placeholder="Search...." name="search" [(ngModel)]="searchtext"> -->
+            <div class="select">
+                <button >Categories <i class="fi fi-rs-settings-sliders"></i></button>
+                <button class="active">Add element <i class="fi fi-br-plus"></i></button>
+                <button routerLink="/market">Add Order <i class="fi fi-br-plus"></i></button>
+            </div>
+        </div>
+        <div class="filter-product" >
+            <button  routerLink="/market" >All </button>
+            <!-- <button  routerLink="/market" *ngFor="let Categor of categorysArray">{{Categor.name}} </button> -->
+            <button routerLink="/plant" routerLinkActive="active"><img src="../../assets/imags/plant.png">Plants  </button>
+            <button routerLink="/equipment" routerLinkActive="active" ><img src="../../assets/imags/agriculture.png">Agricultural Tools  </button>
+            <button routerLink="/fertlizer" routerLinkActive="active"><img src="../../assets/imags/fertilizer1.png">fertillzers </button>
+            </div>
+    </div>
+    <form class="add-product">
+        <img src="../../assets/imags/fertlizer (8).png">
+        <input type="image" placeholder="set image">
+        <input type="name" placeholder="product name">
+        <input type="number" placeholder="product price">
+
+
+    </form>
+</main>
+
+</div>
+
+

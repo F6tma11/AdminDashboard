@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-style: bold;
+    clear: both;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins';
+    
+}
+
+
+
+body {
+    overflow: hidden;
+}
+
+.fi-rs-settings-sliders{
+    rotate: 30deg;
+ }
+ button {
+    background: #EC6D0E;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 7px 20px;
+    border-radius: 8px;
+    margin: 20px;
+
+}
+
+
+
+.add_update{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+input{
+     width: 700px;
+     padding: 8px;
+     border-radius: 10px;
+     margin: 10px 0px;
+     border: none;
+     box-shadow: -1px 0 #EC6D0E, 0 1px #EC6D0E, 1px 0 #EC6D0E, 0 -1px #EC6D0E;
+ }
+ 
+
+
+.main-content {
+    margin-left: 220px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px ;
+    margin: 0;
+    background-color: #F5F5F5;
+    /* position: fixed; */
+
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+
+main {
+    margin-top: 0px;
+    padding: 2rem 1.5rem;
+
+}
+
+.img-product {
+    width: 40px;
+    height: 30px;
+
+}
+
+
+.fi-rr-edit {
+    color: #578243;
+    background: #B0F291;
+    border-radius: 10px;
+    margin-right:10px ;
+}
+
+.fi-rr-trash {
+    border-radius: 15px;
+    color: #FF0B0B;
+    background: #f18787;
+    margin-right:10px ;
+}
+.products{
+    height: 250px;
+}
+
+button {
+    background: #EC6D0E;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 10px 90px;
+    border-radius: 8px;
+
+}
+
+  
+ 
+  
+ 
+ 
+
+  
+
+  
+
